@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Person Record</title>
+    <link rel="stylesheet" href="black-book.css" />
+    <style>
+      .person-shell {
+        width: min(980px, 100%);
+        color: #19140c;
+        border-radius: 12px;
+        padding: 1rem;
+        background:
+          radial-gradient(circle at 12% 8%, rgba(117, 90, 52, 0.22), transparent 22%),
+          linear-gradient(rgba(58, 42, 20, 0.35) 1px, transparent 1px) 0 2.2rem / 100% 2.1rem,
+          linear-gradient(180deg, #dfd2af, #ccb990);
+        box-shadow:
+          inset 0 0 0 1px rgba(90, 69, 36, 0.38),
+          0 26px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      .person-title {
+        margin: 0;
+        font-family: "IM Fell English SC", "Cinzel", "Times New Roman", serif;
+        font-size: clamp(2rem, 4.4vw, 3rem);
+      }
+
+      .person-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .person-note {
+        margin: 1rem 0;
+      }
+
+      .person-sources {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 0.55rem;
+      }
+
+      .person-source-item {
+        padding: 0.55rem 0.65rem;
+        border: 1px solid rgba(73, 52, 21, 0.35);
+        background: rgba(244, 233, 206, 0.78);
+      }
+
+      .person-source-item a {
+        color: #6a2d21;
+        text-decoration-thickness: 1px;
+        word-break: break-all;
+      }
+
+      .person-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="scene">
+      <section class="person-shell">
+        <header class="person-top">
+          <h1 id="personName" class="person-title">Person Record</h1>
+          <span id="personTag" class="entry-tag">UNVERIFIED</span>
+        </header>
+
+        <p id="personNote" class="summary person-note"></p>
+        <ul id="personSources" class="person-sources"></ul>
+
+        <div class="person-actions">
+          <a class="entry-tag" href="black-book.html" style="text-decoration:none">Back To Book</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="book-names.js"></script>
+    <script src="person.js"></script>
+  </body>
+</html>
