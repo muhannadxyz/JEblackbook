@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jefferey Epstein Black Book</title>
+    <link rel="stylesheet" href="black-book.css" />
+  </head>
+  <body>
+    <main class="scene">
+      <section id="bookShell" class="book-shell" aria-label="Notebook interface">
+        <button id="coverButton" class="book-cover" aria-expanded="false">
+          <span class="cover-spine"></span>
+          <p class="cover-kicker">Confidential Ledger</p>
+          <h1 class="cover-title">JEFFEREY EPSTEIN BLACK BOOK</h1>
+          <p class="cover-note">Tap to open the ledger.</p>
+        </button>
+        <div class="page-turn" aria-hidden="true"></div>
+
+        <section id="bookPages" class="book-page" hidden>
+          <div class="spread">
+            <aside class="left-page">
+              <header class="page-header">
+                <h2 id="leftPageLabel">Page 01</h2>
+                <p id="leftPageSubtitle" class="page-subtitle">Case Notes</p>
+              </header>
+              <section id="caseNotesPanel">
+                <p class="note-block">
+                  This ledger is formatted like a reading spread. Turn pages to move through
+                  names in book order.
+                </p>
+                <p class="note-block">
+                  Sorting target: alphabetical by last name, grouped by initial letter.
+                </p>
+                <p class="note-block">
+                  Case note: <span class="entry-name island-flag">red-letter names</span> indicate
+                  individuals marked as confirmed visitors to Little Saint James in this ledger
+                  dataset.
+                </p>
+                <p class="note-block">
+                  Source context: names were provided as part of Jeffrey Epstein's little black
+                  book, described as a personal address/contact book that includes entries for
+                  high-profile celebrities, politicians, billionaires, scientists, and models.
+                </p>
+              </section>
+              <ul id="leftEntryList" class="entries" aria-live="polite" hidden></ul>
+            </aside>
+
+            <section class="right-page">
+              <header class="page-header">
+                <h2 id="rightPageLabel">Page 02</h2>
+                <p class="page-subtitle">
+                  <span class="entry-name island-flag">Red-letter names</span> are confirmed
+                  island visitors.
+                </p>
+              </header>
+
+              <ul id="entryList" class="entries" aria-live="polite"></ul>
+
+              <footer class="pager">
+                <button id="prevPage" type="button">Turn Back</button>
+                <p id="pageLabel">Pages 01-02</p>
+                <button id="nextPage" type="button">Turn Page</button>
+              </footer>
+            </section>
+          </div>
+        </section>
+      </section>
+
+      <section id="controlsPanel" class="controls-panel" aria-label="Book filters" hidden>
+        <div class="toolbar">
+          <label class="field">
+            <span>Search Name</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Filter a name..."
+              autocomplete="off"
+            />
+          </label>
+          <label class="field">
+            <span>Status</span>
+            <select id="statusFilter">
+              <option value="all">All</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="alleged">Alleged</option>
+              <option value="disputed">Disputed</option>
+              <option value="unverified">Unverified</option>
+            </select>
+          </label>
+        </div>
+        <p class="summary" id="resultSummary"></p>
+      </section>
+    </main>
+
+    <template id="entryTemplate">
+      <li class="entry">
+        <a class="entry-name entry-name-link" href="#"></a>
+        <span class="entry-tag"></span>
+        <span class="entry-meta"></span>
+      </li>
+    </template>
+
+    <script src="book-names.js"></script>
+    <script src="black-book.js"></script>
+  </body>
+</html>
