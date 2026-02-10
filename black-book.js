@@ -18,11 +18,45 @@ function normalizeName(value) {
     .trim();
 }
 
+function buildNameKeys(value) {
+  const raw = String(value || "").trim();
+  const base = normalizeName(raw);
+  const keys = new Set();
+  if (base) keys.add(base);
+
+  // Treat "Last, First" and "First Last" as the same person key.
+  if (raw.includes(",")) {
+    const [last, ...restParts] = raw.split(",");
+    const rest = restParts.join(" ").trim();
+    const lastTrimmed = last.trim();
+    if (rest && lastTrimmed) {
+      const flipped = normalizeName(`${rest} ${lastTrimmed}`);
+      if (flipped) keys.add(flipped);
+    }
+  }
+
+  return Array.from(keys);
+}
+
+function matchByAnyKey(knownKeysSet, value) {
+  const keys = buildNameKeys(value);
+  return keys.some((k) => knownKeysSet.has(k));
+}
+
+function getByAnyKey(map, value) {
+  const keys = buildNameKeys(value);
+  for (const key of keys) {
+    if (map.has(key)) return map.get(key);
+  }
+  return undefined;
+}
+
 const seenNames = new Set();
 const importedNames = importedNamesRaw.filter((name) => {
-  const key = normalizeName(name);
-  if (!key || seenNames.has(key)) return false;
-  seenNames.add(key);
+  const keys = buildNameKeys(name);
+  if (!keys.length) return false;
+  if (keys.some((k) => seenNames.has(k))) return false;
+  keys.forEach((k) => seenNames.add(k));
   return true;
 });
 
@@ -33,11 +67,11 @@ const tagByName = new Map(
 
 const entries = importedNames.map((name, index) => ({
   name: String(name).trim(),
-  status: tagByName.get(normalizeName(name)) || "unverified",
+  status: getByAnyKey(tagByName, name) || "unverified",
   note: "Name record loaded from the directory dataset.",
   filingDate: "2024-01-01",
   listId: index + 1,
-  islandFlag: islandNameSet.has(normalizeName(name)),
+  islandFlag: matchByAnyKey(islandNameSet, name),
 }));
 
 function isRedEntry(entry) {
