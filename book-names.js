@@ -1013,6 +1013,10 @@ window.blackBookNames = [
   "Itzhak Perlman",
   "Eva Andersson-Dubin",
   "Sarah Ferguson",
+  "Salvatore Nuara",
+  "Zurab Mikeladze",
+  "Leonic Leonov",
+  "Nicola Caputo",
 ];
 
 window.islandFlagNames = [
@@ -1051,6 +1055,10 @@ window.nameTagByName = {
   "Andrew Farkas": "confirmed",
   "Thorbjorn Jagland": "confirmed",
   "Sultan Ahmed bin Sulayem": "confirmed",
+  "Salvatore Nuara": "reported",
+  "Zurab Mikeladze": "reported",
+  "Leonic Leonov": "reported",
+  "Nicola Caputo": "reported",
 };
 
 window.personInfoByName = {
@@ -1076,72 +1084,32 @@ window.personInfoByName = {
   "Itzhak Perlman": "Reported context: described as an occasional passenger.",
   "Eva Andersson-Dubin": "Reported context: described as appearing across multiple flights with family.",
   "Sarah Ferguson": "Reported context: described as appearing in some mentions.",
+  "Salvatore Nuara": "Reported context: identified in user-shared materials (including a congressional social post and screenshot).",
+  "Zurab Mikeladze": "Reported context: identified in user-shared materials (including a congressional social post and screenshot).",
+  "Leonic Leonov": "Reported context: identified in user-shared materials (including a congressional social post and screenshot).",
+  "Nicola Caputo": "Reported context: identified in user-shared materials (including a congressional social post and screenshot).",
 };
 
-
 window.personSourcesByName = {
-  "General": [
-    "https://en.wikipedia.org/wiki/Little_Saint_James",
-    "https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html",
-    "https://www.wired.com/story/jeffrey-epstein-island-visitors-data-broker-leak",
-    "https://www.wired.com/video/watch/we-tracked-every-visitor-to-epstein-island",
-    "https://www.justice.gov/epstein"
-  ],
-  "Prince Andrew": [
-    "https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files",
-    "https://www.aljazeera.com/news/2024/1/4/jeffrey-epstein-list-whose-names-are-on-the-newly-unsealed-documents"
-  ],
-  "Stephen Hawking": [
-    "https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files",
-    "https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"
-  ],
-  "Sergey Brin": [
-    "https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files",
-    "https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"
-  ],
-  "Anne Wojcicki": [
-    "https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files",
-    "https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"
-  ],
-  "Reid Hoffman": [
-    "https://en.wikipedia.org/wiki/Little_Saint_James",
-    "https://www.abc.net.au/news/2025-12-21/epstein-files-who-is-named-in-the-released-emails-documents/106026984"
-  ],
-  "Howard Lutnick": [
-    "https://en.wikipedia.org/wiki/Little_Saint_James",
-    "https://www.pbs.org/newshour/nation/a-list-of-powerful-men-named-in-the-epstein-files-from-elon-musk-to-former-prince-andrew",
-    "https://www.bbc.com/news/articles/cqxynz2l0g2o"
-  ],
-  "Joanna Rubinstein": [
-    "https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"
-  ],
-  "Ehud Barak": [
-    "https://en.wikipedia.org/wiki/Little_Saint_James",
-    "https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"
-  ],
-  "David Copperfield": [
-    "https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files"
-  ],
-  "Ghislaine Maxwell": [
-    "https://en.wikipedia.org/wiki/Little_Saint_James"
-  ],
-  "Les Wexner": [
-    "https://en.wikipedia.org/wiki/Little_Saint_James"
-  ],
-  "Bill Clinton": [
-    "https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files",
-    "https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"
-  ],
-  "Andrew Farkas": [
-    "https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files"
-  ],
-  "Thorbjorn Jagland": [
-    "https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files"
-  ],
-  "Sultan Ahmed bin Sulayem": [
-    "https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"
-  ],
-  "Roger Schank": [
-    "https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"
-  ]
+  "General": ["https://en.wikipedia.org/wiki/Little_Saint_James","https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html","https://www.wired.com/story/jeffrey-epstein-island-visitors-data-broker-leak","https://www.wired.com/video/watch/we-tracked-every-visitor-to-epstein-island","https://www.justice.gov/epstein"],
+  "Prince Andrew": ["https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files","https://www.aljazeera.com/news/2024/1/4/jeffrey-epstein-list-whose-names-are-on-the-newly-unsealed-documents"],
+  "Stephen Hawking": ["https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files","https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"],
+  "Sergey Brin": ["https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files","https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"],
+  "Anne Wojcicki": ["https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files","https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"],
+  "Reid Hoffman": ["https://en.wikipedia.org/wiki/Little_Saint_James","https://www.abc.net.au/news/2025-12-21/epstein-files-who-is-named-in-the-released-emails-documents/106026984"],
+  "Howard Lutnick": ["https://en.wikipedia.org/wiki/Little_Saint_James","https://www.pbs.org/newshour/nation/a-list-of-powerful-men-named-in-the-epstein-files-from-elon-musk-to-former-prince-andrew","https://www.bbc.com/news/articles/cqxynz2l0g2o"],
+  "Joanna Rubinstein": ["https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"],
+  "Ehud Barak": ["https://en.wikipedia.org/wiki/Little_Saint_James","https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"],
+  "David Copperfield": ["https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files"],
+  "Ghislaine Maxwell": ["https://en.wikipedia.org/wiki/Little_Saint_James"],
+  "Les Wexner": ["https://en.wikipedia.org/wiki/Little_Saint_James"],
+  "Bill Clinton": ["https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files","https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"],
+  "Andrew Farkas": ["https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files"],
+  "Thorbjorn Jagland": ["https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files"],
+  "Sultan Ahmed bin Sulayem": ["https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"],
+  "Roger Schank": ["https://nymag.com/intelligencer/article/who-is-on-jeffrey-epstein-list-names-clients-associates-files-emails.html"],
+  "Salvatore Nuara": ["https://t.co/fLLzGW9rR7"],
+  "Zurab Mikeladze": ["https://t.co/fLLzGW9rR7"],
+  "Leonic Leonov": ["https://t.co/fLLzGW9rR7"],
+  "Nicola Caputo": ["https://t.co/fLLzGW9rR7"],
 };

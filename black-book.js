@@ -80,6 +80,7 @@ function isRedEntry(entry) {
 
 const statusLabels = {
   confirmed: "Confirmed",
+  reported: "Reported",
   alleged: "Alleged",
   disputed: "Disputed",
   unverified: "Unverified",

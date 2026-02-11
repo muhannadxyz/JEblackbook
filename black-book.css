@@ -401,6 +401,11 @@ select:focus {
   color: #7c470f;
 }
 
+.entry-tag.tag-reported {
+  border-color: rgba(20, 86, 132, 0.7);
+  color: #184f78;
+}
+
 .entry-tag.tag-disputed {
   border-color: rgba(129, 35, 35, 0.7);
   color: #7b1c1c;

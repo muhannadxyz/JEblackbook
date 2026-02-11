@@ -9,6 +9,7 @@ function normalizeName(value) {
 
 const statusLabels = {
   confirmed: "CONFIRMED",
+  reported: "REPORTED",
   alleged: "ALLEGED",
   disputed: "DISPUTED",
   unverified: "UNVERIFIED",
